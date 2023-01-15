@@ -10,8 +10,8 @@
     "plugin:node/recommended"
   ],
   "parserOptions": {
-    "project": "./tsconfig.json",
-	"tsconfigRootDir": "./backend"
+    "project": "./tsconfig.json"
+	// "tsconfigRootDir": ""
   },
   "rules": {
     "max-len": [
