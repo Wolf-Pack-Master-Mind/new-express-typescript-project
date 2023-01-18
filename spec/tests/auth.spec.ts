@@ -2,7 +2,7 @@ import supertest, { SuperTest, Test, Response } from "supertest";
 import logger from "jet-logger";
 
 import app from "@src/server";
-import authRoutes from "@src/routes/auth-routes";
+import authRoutes from "@src/controllers/auth";
 import userRepo from "@src/repos/user-repo";
 import pwdUtil from "@src/util/pwd-util";
 import EnvVars from "@src/declarations/major/EnvVars";
