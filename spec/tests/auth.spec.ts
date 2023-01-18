@@ -2,7 +2,6 @@ import supertest, { SuperTest, Test, Response } from "supertest";
 import logger from "jet-logger";
 
 import app from "@src/server";
-import authRoutes from "@src/routes/auth-routes";
 import userRepo from "@src/repos/user-repo";
 import pwdUtil from "@src/util/pwd-util";
 import EnvVars from "@src/declarations/major/EnvVars";
@@ -13,10 +12,9 @@ import { errors as authServiceErrs } from "@src/services/auth-service";
 // **** Variables **** //
 
 // Misc
-const { paths } = authRoutes,
-  authPath = "/api" + paths.basePath,
-  loginPath = `${authPath}${paths.login}`,
-  logoutPath = `${authPath}${paths.logout}`;
+const authPath = "/api/auth";
+const loginPath = `${authPath}/login`;
+const logoutPath = `${authPath}/logout`;
 
 // Test message
 const msgs = {

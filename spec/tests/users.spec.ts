@@ -5,7 +5,6 @@ import logger from 'jet-logger';
 import app from '@src/server';
 import userRepo from '@src/repos/user-repo';
 import User, { IUser } from '@src/models/User';
-import userRoutes from '@src/routes/user-routes';
 import HttpStatusCodes from '@src/declarations/major/HttpStatusCodes';
 import loginAgent from '../support/login-agent';
 import { userNotFoundErr } from '@src/services/user-service';
@@ -14,12 +13,11 @@ import { userNotFoundErr } from '@src/services/user-service';
 // **** Variables **** //
 
 // Misc
-const { paths } = userRoutes,
-  usersPath = ('/api' + paths.basePath),
-  getUsersPath = `${usersPath}${paths.get}`,
-  addUsersPath = `${usersPath}${paths.add}`,
-  updateUserPath = `${usersPath}${paths.update}`,
-  deleteUserPath = `${usersPath}${paths.delete}`;
+const usersPath = '/api/users';
+const getUsersPath = `${usersPath}/all`;
+const addUsersPath = `${usersPath}/add`;
+const updateUserPath = `${usersPath}/update`;
+const deleteUserPath = `${usersPath}/delete/:id`;
 
 // Dummy users for GET req
 const dummyGetAllUsers = [
